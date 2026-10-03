@@ -442,7 +442,11 @@ html{scroll-behavior:smooth;}
   position:relative;width:100%;padding-top:66%;border-radius:20px;overflow:hidden;
   border:1.5px solid rgba(255,255,255,.7);box-shadow:0 10px 24px -14px rgba(190,60,110,.4);
 }
-.calendar-embed{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.calendar-embed{
+  position:absolute;top:0;left:0;width:100%;border:none;
+  height:calc(100% + 76px); /* 하단 'Google Calendar에 추가' 바를 영역 밖으로 밀어 숨김 */
+  filter:hue-rotate(100deg) saturate(1.05); /* 보라 일정 → 핑크 테마색 (외부 문서라 직접 스타일 불가) */
+}
 @media (max-width:600px){.calendar-embed-wrap{padding-top:130%;}}
 
 /* ================= 반응형 ================= */
@@ -1372,10 +1376,9 @@ GreyMusicStudio의 모든 작업물은 저작권 및 작업자의 기술적 자�
 <!-- ============ 9. 작업 가능 일정 (달력) ============ -->
 <section class="section" id="calendar">
   <div class="section-head"><div class="section-icon"></div><div class="section-title">작업 가능 일정</div></div>
-  <div class="section-sub">일정만 표시됩니다. (자세한 항목 내용은 비공개)</div>
-  <div class="calendar-embed-wrap">
+    <div class="calendar-embed-wrap">
     <iframe
-      src="https://calendar.google.com/calendar/embed?src=selepina1223%40gmail.com&ctz=Asia%2FDili"
+      src="https://calendar.google.com/calendar/embed?src=selepina1223%40gmail.com&ctz=Asia%2FDili&bgcolor=%23FFF3F8&showTitle=0&showPrint=0&showTz=0"
       class="calendar-embed"
       title="작업 가능 일정"
       frameborder="0"
